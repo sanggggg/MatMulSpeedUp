@@ -13,3 +13,6 @@ clean:
 
 run: $(TARGET)
 	./$(TARGET)
+
+graph: all
+	python3 thread_perf_graph.py

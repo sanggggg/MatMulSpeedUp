@@ -81,9 +81,7 @@ int main(int argc, char **argv) {
     printf("Calculating...(iter=%d) ", i); fflush(stdout);
     zero_mat(C, M, N);
     timer_start(0);
-    // mat_mul_naive(A, B, C, M, N, K);
-    mat_mul_locality(A, B, C, M, N, K);
-    // mat_mul_blocking(A, B, C, M, N, K);
+    mat_mul_pthread(A, B, C, M, N, K, num_threads);
     double elapsed_time = timer_stop(0);
     printf("%f sec\n", elapsed_time);
     elapsed_time_sum += elapsed_time;
